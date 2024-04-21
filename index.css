@@ -75,6 +75,16 @@ img {
 Buttons 
 ======
 */
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+.nav-links li {
+  cursor: pointer;
+}
+.nav-links li:hover {
+  color: #0105ef;
+}
 .btn,
 .btn-white,
 .btn-primary {
