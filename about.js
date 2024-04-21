@@ -59,6 +59,4 @@ fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${myParam}`)
     console.log(1);
     creat(data.drinks);
   })
-  .catch((eror) => {
-    creat(data.drinks);
-  });
+  .catch((eror) => {});
