@@ -85,6 +85,17 @@ Buttons
 .nav-links li:hover {
   color: #0105ef;
 }
+.j a {
+  color: #01077edd;
+  border-bottom: 1px solid black;
+  padding: 2px;
+}
+.j a:hover {
+  color: red;
+}
+.j {
+  color: #01077edd;
+}
 .btn,
 .btn-white,
 .btn-primary {

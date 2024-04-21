@@ -1,5 +1,6 @@
 const ui = document.querySelector(".section");
 const loader = document.querySelector(".loader");
+const j = document.querySelector(".j");
 function creat(iu) {
   iu.forEach(
     ({
@@ -17,6 +18,7 @@ function creat(iu) {
       let iu1 = document.createElement("article");
       iu1.classList.add("cocktail8");
       console.log(strDrink);
+      iu.innerHTML == "";
       iu1.innerHTML = `
       <h2 class="section-title">${strDrink}</h2>
       <div class="drink">
@@ -53,7 +55,10 @@ fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${myParam}`)
   .then((res) => res.json())
   .then((data) => {
     loader.classList.add("jidden");
+    j.classList.add("jidden");
     console.log(1);
     creat(data.drinks);
   })
-  .catch((eror) => {});
+  .catch((eror) => {
+    creat(data.drinks);
+  });
