@@ -1,8 +1,8 @@
 const articel7 = document.querySelector(".cocktails-center");
-const input = document.querySelector("#input");
-let loader = document.querySelector(".loader");
+const input = document.getElementById("input");
 
 function creat(articel) {
+  articel7.innerHTML = "";
   articel.forEach(
     ({ idDrink, strDrink, strGlass, strAlcoholic, strDrinkThumb }) => {
       let articel1 = document.createElement("article");
@@ -28,20 +28,18 @@ function creat(articel) {
 fetch("https://www.thecocktaildb.com/api/json/v1/1/search.php?s=")
   .then((res) => res.json())
   .then((data) => {
-    loader.classList.add("jidden");
     creat(data.drinks);
+    console.log(data.drinks);
   })
   .catch((eror) => {});
 
-// input.addEventListener("input", (e) => {
-//   const url = `www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${e.target.value}`;
-
-//   fetch(url)
-//     .then((res) => res.json())
-//     .then((data) => {
-//       console.log(data.drinks);
-//       creat(data.drinks);
-//     })
-//     .catch((eror) => {});
-//   console.log(url);
-// });
+input.addEventListener("input", (e) => {
+  fetch(
+    `https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${e.target.value}`
+  )
+    .then((res) => res.json())
+    .then((data) => {
+      creat(data.drinks);
+    })
+    .catch((eror) => {});
+});
